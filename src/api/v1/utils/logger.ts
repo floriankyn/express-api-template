@@ -6,7 +6,7 @@ if (!existsSync('logs')) {
   mkdirSync('logs')
 }
 
-const date = new Date().toISOString().split('T')[0] 
+const date = new Date().toISOString().split('T')[0]
 const logFileName = join('logs', `${date}.log`)
 
 const Logger = createLogger({

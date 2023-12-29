@@ -1,4 +1,4 @@
-import { Response } from 'express';
+import { Response } from 'express'
 
 export const errorFormattedResponse = (
   res: Response,
@@ -13,6 +13,6 @@ export const errorFormattedResponse = (
     error: errorMsg,
     details: details,
     path: res.req.url,
-    trailStack: trailString
-  });
+    trailStack: trailString,
+  })
 }

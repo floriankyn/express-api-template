@@ -4,7 +4,6 @@ import express, { Router } from 'express'
 const router: Router = express.Router()
 const routeFiles: string[] = fs.readdirSync(`${__dirname}/`)
 
-
 async function main(): Promise<void> {
   for (const file of routeFiles) {
     if (file !== 'loader.js') {
