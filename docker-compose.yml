@@ -1,0 +1,21 @@
+version: "3.5"
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - MASTER_TOKEN_SECRET
+        - RUNPOD_API_KEY
+        - DATABASE_URL
+    container_name: template-api
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      - MASTER_TOKEN_SECRET=${MASTER_TOKEN_SECRET}
+      - RUNPOD_API_KEY=${MASTER_TOKEN_SECRET}
+      - DATABASE_URL=${DATABASE_URL}
