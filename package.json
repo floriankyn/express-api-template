@@ -5,7 +5,11 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "node --env-file ./src/api/config/.env ./src/api/config/server.js "
+    "dev": "tsc && node --env-file .env.local dist/api/config/server.js",
+    "format": "prettier --write 'src/**/*.{js,ts,tsx,json,md}'",
+    "lint": "eslint --ext .js,.ts,.tsx src",
+    "build": "tsc",
+    "start": "node --env-file .env.local dist/api/config/server.js"
   },
   "author": "Florian Lepage",
   "license": "MIT",
