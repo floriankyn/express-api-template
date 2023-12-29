@@ -1,8 +1,8 @@
-import fs from 'fs';
-import express, { Router } from 'express';
+import fs from 'fs'
+import express, { Router } from 'express'
 
-const router: Router = express.Router();
-const routeFiles: string[] = fs.readdirSync(`${__dirname}/`);
+const router: Router = express.Router()
+const routeFiles: string[] = fs.readdirSync(`${__dirname}/`)
 
 /**
  * Dynamically imports route modules from a list of files and applies them to a router.
@@ -14,8 +14,8 @@ const routeFiles: string[] = fs.readdirSync(`${__dirname}/`);
 async function main(): Promise<void> {
   for (const file of routeFiles) {
     if (file !== 'loader.js') {
-      const route = await import('./' + file);
-      router.use(route.router);
+      const route = await import('./' + file)
+      router.use(route.router)
     }
   }
 }
@@ -23,8 +23,8 @@ async function main(): Promise<void> {
 main()
   .then()
   .catch((err) => {
-    console.error(err);
-    process.exit(1);
-  });
+    console.error(err)
+    process.exit(1)
+  })
 
-export default router;
+export default router
