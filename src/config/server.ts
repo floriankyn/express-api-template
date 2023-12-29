@@ -30,7 +30,6 @@ app.use(morgan(":method :url :status :res[content-length] - :response-time ms", 
   })
 )
 
-
 // import routes
 import routerV1 from '../api/v1/routes/loader'
 app.use(routerV1)
